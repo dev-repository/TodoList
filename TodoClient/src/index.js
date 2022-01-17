@@ -1,3 +1,6 @@
+import './todo';
+import './index.css'
+
 function test(){
     var  a = 1;
     var b = 2;
