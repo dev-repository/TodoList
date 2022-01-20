@@ -14,11 +14,21 @@ const deleteAllBtn = document.querySelector('.footer button');
 
 eleInputTodo.addEventListener('keyup', (e) => {
    if (e.target.value.trim().length) {
-       addTodoButton.classList.add('active')
+       addTodoButton.classList.add('active');
        return;
    }
-   addTodoButton.classList.remove('active')
-})
+   addTodoButton.classList.remove('active');
+});
+
+addTodoButton.addEventListener('click', (e) => {
+    const text = eleInputTodo.value;
+    if (!text) return;
+
+    const todos = JSON.parse(localStorage.getItem('New Todo')) ?? [];
+    todos.push(text);
+    localStorage.setItem('New Todo', JSON.stringify(todos));
+
+});
 
 // inputBox.onkeyup = () => {
 //     let userData = inputBox.value; //인풋박스의 인풋벨류 가져오기
@@ -41,6 +51,19 @@ addBtn.onclick = () => {
     listArr.push(userData); //사용자 데이터 밀어주기
     localStorage.setItem('New Todo', JSON.stringify(listArr)); // js를 json 객체로 변환
     showTasks(); //callback 
+}
+
+function
+
+function showTodos(todos) {
+   const newTodos = typeof todos === 'undefined' ? JSON.parse(localStorage.getItem('New Todo')) ?? [] : todos;
+   
+   if (newTodos.length) {
+       deleteAllButton.classList.add('active');
+   }else{
+        deleteAllButton.classList.remove('active');
+   }
+
 }
 
 //ul에 list 추가
