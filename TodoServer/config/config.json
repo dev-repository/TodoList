@@ -1,0 +1,14 @@
+{
+  "development": {
+    "storage": "./todo.sqlite",
+    "dialect": "sqlite"
+  },
+  "test": {
+    "storage": "./todo.sqlite",
+    "dialect": "sqlite"
+  },
+  "production": {
+    "storage": "./todo.sqlite",
+    "dialect": "sqlite"
+  }
+}
